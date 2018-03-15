@@ -4,7 +4,7 @@ require_relative 'socialLinks'
 
 describe "Social Links" do
     before(:each) do
-        @browser = BaseClass.new
+        @browser = Social.new
         @browser.setup
     end
 

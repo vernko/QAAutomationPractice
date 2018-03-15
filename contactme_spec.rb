@@ -4,7 +4,7 @@ require_relative 'contactme'
 
 describe "Contact" do
     before(:each) do
-      @browser = BaseClass.new
+      @browser = ContactMe.new
       @browser.setup
     end
 

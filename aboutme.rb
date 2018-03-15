@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 require 'rspec'
-require_relative 'aboutme.rb'
+require_relative 'baseclass'
 
 class AboutMe < BaseClass
     def about_me

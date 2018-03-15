@@ -11,3 +11,5 @@ class ContactMe < BaseClass
       contact_title = @driver.find_element(tag_name: "h1")
     end
 end
+
+# When doing the test on contact page. It doesn't load the video

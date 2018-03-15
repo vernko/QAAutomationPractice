@@ -2,9 +2,9 @@ require 'selenium-webdriver'
 require 'rspec'
 require_relative 'aboutme'
 
-describe "" do
+describe "About Me" do
     before(:each) do
-      @browser = BaseClass.new
+      @browser = AboutMe.new
       @browser.setup
     end
 

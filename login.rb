@@ -21,3 +21,5 @@ class Login < BaseClass
       @driver.find_element(link: "Logout")
     end
 end
+
+# Error with the "Login" element

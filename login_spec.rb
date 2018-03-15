@@ -4,7 +4,7 @@ require_relative 'login'
 
 describe "Log-in" do
     before(:each) do
-        @browser = BaseClass.new
+        @browser = Login.new
         @browser.setup
     end
 
