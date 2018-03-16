@@ -13,7 +13,7 @@ describe "Contact" do
     end
 
     it 'goes to the contact page' do
-      @browser.contact
-      expect(@browser.contact.displayed?).to eq(true)
+      @browser.contact.click
+      expect(@browser.find_contactme.displayed?).to eq(true)
     end
 end

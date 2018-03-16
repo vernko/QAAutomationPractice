@@ -3,10 +3,14 @@ require 'rspec'
 require_relative 'baseclass'
 
 class AboutMe < BaseClass
-    def about_me
+    def know_me
+      sleep 1
       know_me_button = @driver.find_element(link: "Get to Know Me")
-      know_me_button.click
-      sleep 3
-      about_title = @driver.find_element(tag_name: "h1")
+      
+    end
+
+    def find_aboutme
+      sleep 2
+      @driver.find_element(:tag_name, 'h1')
     end
 end

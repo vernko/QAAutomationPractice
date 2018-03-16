@@ -13,7 +13,7 @@ describe "About Me" do
     end
 
     it 'goes to the about me page' do
-      @browser.about_me
-      # expect(@browser.about_me.displayed?).to eq(true)
+      @browser.know_me.click
+      expect(@browser.find_aboutme.displayed?).to eq(true)
     end
 end
