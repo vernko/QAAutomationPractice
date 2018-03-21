@@ -21,6 +21,21 @@ class BaseClass
         @driver.navigate.to @url
     end
 
+    def find_element_with_wait(element, time = 5)
+        wait = Selenium::WebDriver::Wait.new(timeout: time) # seconds
+        begin
+            wait.until {
+                element = @driver.find_element(element)
+                element if element.displayed?
+            }
+        rescue Selenium::WebDriver::Error::TimeOutError
+            puts "Couldn't find #{element}"
+            return false
+        end
+    end
+    #NOTE: I wrote this method as a wrapper for the find_element selenium method. This method is more useful because it will keep trying to find the element for however long you pass in (default is 5 seconds). 
+    #This will allow you to replace all of your find_element calls with find_element_with_wait, and then delete the majority of your sleep statements
+
     def type_things (element, text)
         element.send_keys text
     end
