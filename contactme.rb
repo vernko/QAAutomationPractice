@@ -4,18 +4,15 @@ require_relative 'baseclass'
 
 class ContactMe < BaseClass    
   def contact
-    sleep 1
-    contact_nav = @driver.find_element(link: "Contact")
+    contact_nav = @driver.find_element_with_wait(link: "Contact")
   end
 
   def find_contact_me
-    sleep 2
-    @driver.find_element(:tag_name, 'h1')
+    @driver.find_element_with_wait(:tag_name, 'h1')
   end
 
   def call_me
-    sleep 2
-    @driver.find_element(:xpath => "//a[class='call-me-button']")
+    @driver.find_element_with_wait(:xpath => "//a[class='call-me-button']")
   end
 
   # def email_me

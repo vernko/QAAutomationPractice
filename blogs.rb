@@ -21,8 +21,7 @@ class Blogs < BaseClass
   end
 
   def find_created_blog
-    sleep 2
-    @driver.find_element(:xpath => "//*[@class='blog-main']")
+    @driver.find_element_with_wait(:xpath => "//*[@class='blog-main']")
   end
 
   # def find_blog_page

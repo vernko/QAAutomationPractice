@@ -4,10 +4,17 @@ require 'faker'
 require_relative 'baseclass'
 
 class Register < BaseClass
+  def initialize
+    super
+    @random_name = Faker::DragonBall.character
+    @random_email = Faker::Internet.email
+    @random_password = Faker::Internet.password
+  end
+
   def sign_up
-    register_header = @driver.find_element(link: "Register")
+    register_header = @driver.find_element_with_wait(link: "Register")
     register_header.click
-    sleep 3
+    
     email_field = @driver.find_element(:xpath => "//input[@id='user_email']")
     type_things(email_field, @random_email)
 

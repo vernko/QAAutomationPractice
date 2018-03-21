@@ -4,12 +4,10 @@ require_relative 'baseclass'
 
 class AboutMe < BaseClass
     def know_me
-      sleep 1
-      know_me_button = @driver.find_element(link: "Get to Know Me")
+      know_me_button = @driver.find_element_with_wait(link: "Get to Know Me")
     end
 
     def find_about_me
-      sleep 2
-      @driver.find_element(:tag_name, 'h1')
+      @driver.find_element_with_wait(:tag_name, 'h1')
     end
 end

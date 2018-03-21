@@ -5,9 +5,9 @@ require_relative 'baseclass'
 
 class Login < BaseClass
     def login
-      login_header = @driver.find_element(link: "Login")
+      login_header = @driver.find_element_with_wait(link: "Login")
       login_header.click
-      sleep 3
+      
       email_field = @driver.find_element(:xpath => "//input[@id='user_email']")
       type_things(email_field, @admin_email)
       
