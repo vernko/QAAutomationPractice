@@ -6,7 +6,6 @@ class Social < BaseClass
     def github_button
       @driver.find_element(:xpath => "//i[@class='fa fa-github']").click
       sleep 3
-      # github_nickname = @driver.find_element(class: "p-nickname")
     end
 
     def linkedin_button

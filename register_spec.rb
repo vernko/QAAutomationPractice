@@ -1,7 +1,8 @@
 require 'selenium-webdriver'
 require 'rspec'
+require 'faker'
 require_relative 'register'
 
-class Register < BaseClass
-  
+describe "Registers New Users" do
+
 end

@@ -14,6 +14,6 @@ describe "About Me" do
 
     it 'goes to the about me page' do
       @browser.know_me.click
-      expect(@browser.find_aboutme.displayed?).to eq(true)
+      expect(@browser.find_about_me.displayed?).to eq(true)
     end
 end

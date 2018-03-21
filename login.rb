@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
 require 'rspec'
+require 'faker'
 require_relative 'baseclass'
 
 class Login < BaseClass
