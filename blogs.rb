@@ -12,6 +12,7 @@ class Blogs < BaseClass
     type_things(title_field, @title)
 
     topic_selector = @driver.find_element(:xpath => "//input[@name='blog[topic_id]']")
+    #TODO: This won't actually do anything with the topic, just find it and then move on
     
     content_field = @driver.find_element(:xpath => "//input[@name='blog[body]']")
     type_things(content_field, @random_content)
@@ -23,6 +24,7 @@ class Blogs < BaseClass
   def find_created_blog
     sleep 2
     @driver.find_element(:xpath => "//*[@class='blog-main']")
+    # TODO: Using * in your xpath is memory intensive and prone to errors
   end
 
   # def find_blog_page

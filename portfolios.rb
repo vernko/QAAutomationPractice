@@ -24,6 +24,7 @@ class Portfolios < BaseClass
   def upload_main_image
   end
   # how do you get a method to show that it asks you to pick something from your computer
+  # NOTE: You'll probably have to look into modals and how to manipulate them. It is possible though.
 
   def upload_thumb_image
   end

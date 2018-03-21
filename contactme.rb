@@ -10,7 +10,8 @@ class ContactMe < BaseClass
 
   def find_contact_me
     sleep 2
-    @driver.find_element(:tag_name, 'h1')
+    @driver.find_element(xpath: "//h1[text()='Contact Me']")
+    # NOTE: This was too ambiguous, and would find any h1 on the page. This means changes could easily break it
   end
 
   def call_me

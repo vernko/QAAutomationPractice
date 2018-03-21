@@ -27,4 +27,6 @@ class Social < BaseClass
         @driver.find_element(:xpath => "//i[@class='fa fa-instagram']").click
         sleep 3
     end
+    # NOTE: For pretty much all of these you're going to have to look into how to switch window handles because it'll still be looking on your homepage rather than on the new tab that opens up.
+    # Probably put those methods in the baseclass though, since you might need to use them elsewhere as well.
 end
