@@ -4,6 +4,14 @@ require 'faker'
 require_relative 'baseclass'
 
 class Register < BaseClass
+  def initialize
+    super
+    @random_name = Faker::DragonBall.character
+    @random_email = Faker::Internet.email
+    @random_password = Faker::Internet.password
+    # NOTE: setting up your initialize this way still allows you access to all of the variables in the baseclass, but makes it so that classes that don't need these variables don't have them.
+    # Since classes like AboutMe don't need a random_title, they don't need to inherit these from the BaseClass.
+  end
   def sign_up
     register_header = @driver.find_element(link: "Register")
     register_header.click
