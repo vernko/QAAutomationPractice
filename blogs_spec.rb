@@ -14,13 +14,12 @@ describe "Creates New Blog" do
   end
 
   # it 'goes to blog page' do
-  #   @browser.create_blog.click
-  #   expect(@browser.find_blog.displayed?).to eq(true)
+  #   @browser.find_blog_page.click
+  #   expect(@browser.find_blog_page.displayed?).to eq(true)
   # end
   
   it 'creates a new blog' do
     @browser.create_blog
     expect(@browser.find_created_blog.displayed?).to eq(true)
   end
-
 end

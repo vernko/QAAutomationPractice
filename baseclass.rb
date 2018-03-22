@@ -16,7 +16,7 @@ class BaseClass
     end
 
     def find_element_with_wait(element, time = 5)
-        wait = Selenium::WebDriver::Wait.new(timeout: time) # seconds
+        wait = Selenium::WebDriver::Wait.new(timeout: time)
         begin
             wait.until {
                 element = @driver.find_element(element)
