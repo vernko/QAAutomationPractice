@@ -15,17 +15,32 @@ class BaseClass
         @driver.navigate.to @url
     end
 
-    def find_element_with_wait(element, time = 5)
-        wait = Selenium::WebDriver::Wait.new(timeout: time)
+    def find_element_with_wait(what, time = 5)
+        wait = Selenium::WebDriver::Wait.new(timeout: time) # seconds
         begin
-            wait.until {
-                element = @driver.find_element(element)
-                element if element.displayed?
-            }
+        wait.until {
+            element = @driver.find_element(what)
+            element if element.displayed?
+        }
         rescue Selenium::WebDriver::Error::TimeOutError
-            puts "Couldn't find #{element}"
-            return false
+        puts "Couldn't find #{what}"
+        return false
         end
+    end
+
+    def login_user
+      login_header = find_element_with_wait(link: "Login")
+      login_header.click
+      sleep 3
+      
+      email_field = @driver.find_element(:xpath => "//input[@id='user_email']")
+      type_things(email_field, @admin_email)
+      
+      password_field = @driver.find_element(:xpath => "//input[@id='user_password']")
+      type_things(password_field, @admin_password)
+      
+      login_button = @driver.find_element(:xpath => "//input[@value='Log in']")
+      login_button.click
     end
 
     def type_things (element, text)

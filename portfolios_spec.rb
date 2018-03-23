@@ -12,4 +12,8 @@ describe "Creates New Portfolio Item" do
   after(:each) do
     @browser.close_browser
   end
+
+  it 'creates a portfolio item' do
+    @browser.create_portfolio_item
+    expect().to eq(true)
 end

@@ -12,13 +12,14 @@ class Register < BaseClass
   end
 
   def sign_up
-    register_header = @driver.find_element_with_wait(link: "Register")
+    register_header = find_element_with_wait(:xpath => "//a[@href='/register']")
     register_header.click
+    sleep 4
     
     email_field = @driver.find_element(:xpath => "//input[@id='user_email']")
     type_things(email_field, @random_email)
 
-    name_field = @driver.find_element(:xpath, => "//input[@id='user_name']")
+    name_field = @driver.find_element(:xpath => "//input[@id='user_name']")
     type_things(name_field, @random_name)
     
     password_field = @driver.find_element(:xpath => "//input[@id='user_password']")
@@ -29,5 +30,10 @@ class Register < BaseClass
     
     sign_in_button = @driver.find_element(:xpath => "//input[@value='Sign up']")
     sign_in_button.click
+    sleep 2
+  end
+
+  def logout_header
+    @driver.find_element(link: "Logout")
   end
 end

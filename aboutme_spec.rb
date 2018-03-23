@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
 require 'rspec'
+require 'faker'
 require_relative 'aboutme'
 
 describe "About Me" do
@@ -13,7 +14,7 @@ describe "About Me" do
     end
 
     it 'goes to the about me page' do
-      @browser.know_me.click
+      @browser.know_me
       expect(@browser.find_about_me.displayed?).to eq(true)
     end
 end

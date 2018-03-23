@@ -13,7 +13,7 @@ describe "Log-in" do
     end
 
     it 'logs in' do
-        @browser.login
+        @browser.login_user
         expect(@browser.logout_header.displayed?).to eq(true)
     end
 end
